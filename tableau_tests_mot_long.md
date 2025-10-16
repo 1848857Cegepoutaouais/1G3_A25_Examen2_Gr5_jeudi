@@ -1,17 +1,17 @@
-# Tests unitaires pour la fonction _mot_plus_long_
+# Tests unitaires pour la fonction mot_plus_long
 - La fonction _mot_plus_long_ ne contient pas de bogues. 
 - Créer au plan de tests contenant au moins 5 cas de tests **DIFFÉRENTS/VARIÉS**.
 - Créer les tests unitaires pour tous les cas de tests.
 
-|                                 |           |                           |
-|---------------------------------|-----------|---------------------------|
-|                                 |           |                           |
-|                                 |           |                           |
-|                                 |           |                           |
-|                                 |           |                           |
-|                                 |           |                           |
-|                                 |           |                           |
-|                                 |           |                           |
+| Liste de mots                                                     | Résultat attendu            | Résultat obtenue            | Remarque et Massage affiché                                |
+|-------------------------------------------------------------------|-----------------------------|-----------------------------|------------------------------------------------------------|
+| ["banane","orange","anticonstitutionnellement","pommes","celeri"] | "anticonstitutionnellement" | "anticonstitutionnellement" |                                                            |
+| ["néant","spacial","quasar", ,"planétoïde"]                       | "planétoïde"                | "planétoïde"                |                                                            |
+| ["","","","",""]                                                  | None                        | None                        |                                                            |
+| ["42","13","120","55","9999"]                                     | "9999"                      |                             |                                                            |
+| [55,63,99,777,0]                                                  | None                        |                             |                                                            |
+| "ALLO"                                                            | A                           | A                           |                                                            |
+| 99                                                                | None                        | None                        | Erreur. Impossible de trouver le mot le plus long dans 99  |
 
 # Tests unitaires pour la fonction _pourcentage_mots_max_
 | **mots**                                     | **taille** | **Résultat attendu** | **Remarque ou Message affiché**                                      |

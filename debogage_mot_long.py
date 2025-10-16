@@ -38,15 +38,22 @@ def pourcentage_mots_max(mots, taille):
 
     # TODO: Corriger les bogues dans le code suivant les erreurs relevées par les tests unitaires de cette fonction.
     #       Indice : chaque mot valide mérite d’être compté, et seuls ceux qui sont suffisamment grands font grimper ton pourcentage !
-    total_valide = 0
-    count_sup = 0
+    total_valide = 0.0
+    count_sup = 0.0
     for mot in mots:
-        longueur = len(mot)
-        if longueur < taille:
-            count_sup = 1
+        if isinstance(mot, str): # Vérifier que le mot est un string
+            longueur = len(mot)
+            total_valide += 1.0 # Ajouter un +1 à total_valide pour pouvoir avoir le total des entrées qui était des strings
+            if longueur > taille: # Changer le < en > puisque qu'on veut entrer lorsque le mot est plus long que la taille indiquée
+                count_sup += 1.0 # Augmenter de 1 le compte du nombre de string qui sont plus long que la taille indiquée
 
-    pourcentage = (count_sup / total_valide) * 100
-    return round(pourcentage, 2)
+    # Si mots est totalement vide
+    if total_valide <= 0: # Vérifier que la liste mots a des éléments valides
+        print("Impossible de calculer le pourcentage. Aucun élément valide.")
+        return None
+    else:
+        pourcentage = float(count_sup/total_valide) * 100
+        return round(pourcentage, 1)
 
 if __name__ == "__main__":
     animaux = ["chat", "chien", "éléphant", "souris", "hippopotame", 42, None, "oiseau"]
